@@ -6,3 +6,16 @@
 
 angular
     .module("myApp",[]);
+
+// Tell angular to use controller.
+// Controller method takes two arguments:
+    // 1) String representation of controller name used to identify it in the view.
+    // 2) The function string representation will point to.
+angular
+    .module("myApp")
+    .controller("MyController", myController); // Make sure function is the same letter case.
+
+// Define controller function and give it a property named "greeting".
+function myController() {
+    this.greeting = "Well, hello.";
+}

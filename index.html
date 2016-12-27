@@ -9,14 +9,20 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <script src="./app.js"></script>
 </head>
 
-<body ng-app="myApp"> <!--Tells Angular that body tag is root element of Angular app.-->
-                      <!--As such, html within body will be evaluated by Angular.-->
+<body ng-app="myApp" ng-controller="MyController as ctrl"> 
+<!--ng-app tells Angular that body tag is root element of Angular app.-->
+    <!--As such, html within body will be evaluated by Angular.-->
 
+<!--ng-controller makes ctrl an alias for the $scope object.-->
+<!--Anything in our html view that is bound to the ctrl alias is bound directly to MyController's "this" syntax.-->
 
+    <h1>
+        {{ctrl.greeting}}
+    </h1>
 
 </body>
 
