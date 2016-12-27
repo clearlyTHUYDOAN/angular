@@ -11,11 +11,32 @@ angular
 // Controller method takes two arguments:
     // 1) String representation of controller name used to identify it in the view.
     // 2) The function string representation will point to.
+
 angular
     .module("myApp")
     .controller("MyController", myController); // Make sure function is the same letter case.
 
+angular
+    .module("myApp")
+    .controller("CtrlOne", ctrlOne);
+
+angular
+    .module("myApp")
+    .controller("CtrlTwo", ctrlTwo);
+
+
 // Define controller function and give it a property named "greeting".
+// When you make a controller, you pass the $scope object as an argument. 
+
 function myController() {
     this.greeting = "Well, hello.";
+    this.name = "Jay";
+}
+
+function ctrlOne() {
+    this.greeting = "Hello from CtrlOne!";
+}
+
+function ctrlTwo() {
+    this.greeting = "Hello from CtrlTwo!";
 }

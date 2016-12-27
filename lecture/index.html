@@ -9,7 +9,6 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>-->
     <script src="./app.js"></script>
 </head>
 
@@ -17,12 +16,29 @@
 <!--ng-app tells Angular that body tag is root element of Angular app.-->
     <!--As such, html within body will be evaluated by Angular.-->
 
-<!--ng-controller makes ctrl an alias for the $scope object.-->
+<!--ng-controller makes ctrl an alias or name for the $scope object.-->
 <!--Anything in our html view that is bound to the ctrl alias is bound directly to MyController's "this" syntax.-->
 
     <h1>
-        {{ctrl.greeting}}
+        {{ctrl.greeting}} <!--Bound directly to MyController's "this".-->
     </h1>
+
+    <input ng-model="ctrl.name">
+    {{ctrl.name}} <!--Bound directly to MyController's "this".-->
+
+<!--You can have multiple controllers controlling different views.-->
+<!--Controllers can also be nested within other controllers.-->
+    <!--Instead of controller as, you can use $scope. That's the old Angular way.-->
+    <!--$scope syntax allows each child controller access to its parents' properties - like Javascript.-->
+    <!--Controller as method makes scope bound to the controller object.-->
+
+    <div ng-controller="CtrlOne as ctrlOne">
+        {{ctrlOne.greeting}}
+    </div>
+
+    <div ng-controller="CtrlTwo as ctrlTwo">
+        {{ctrlTwo.greeting}}
+    </div>
 
 </body>
 
