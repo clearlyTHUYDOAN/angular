@@ -11,15 +11,3 @@ $(document).ready(function() {
         // .keypress(); would show text beside input only after you start typing.
         // Without either, text would not show beside input.
 })
-
-// You have to write the below inside document.ready?
-
-    // $("input")
-    //     .keyup(function() {
-    //         console.log(value);
-    //         var value = $(this).val();
-    //         console.log(value);
-    //         console.log(this);
-    //         $("p").text(value);
-    //     })
-    //     .keyup();
