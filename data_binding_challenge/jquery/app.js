@@ -3,11 +3,13 @@ $(document).ready(function() {
     $("input")
         .keyup(function() {
             var value = $(this).val();
-            // console.log(value);
+            console.log(value);
             // console.log(this);
             $("p").text(value);
         })
         .keyup(); // Allows text beside input to render before anything is typed.
+        // .keypress(); would show text beside input only after you start typing.
+        // Without either, text would not show beside input.
 })
 
 // You have to write the below inside document.ready?
